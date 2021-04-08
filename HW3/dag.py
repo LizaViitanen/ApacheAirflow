@@ -5,7 +5,6 @@ from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 
 with DAG(
-        dag_id='titanic_pivot',  
         **default_settings(),  
 ) as dag:
     

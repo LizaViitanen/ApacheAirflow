@@ -9,7 +9,7 @@ def default_settings():
     filename = module.__file__
 
     settings = {
-        #'dag_id': pathlib.Path(filename).stem,  # Имя DAG достаем из имени файла
+        'dag_id': pathlib.Path(filename).stem,  # Имя DAG достаем из имени файла
         'schedule_interval': '@monthly',  # Периодичность запуска, например, "00 15 * * *"
         'catchup': False,  # Выполняем только последний запуск
         'default_args': {  # Базовые аргументы для каждого оператора

@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from util.settings import default_settings
 
 
 def get_path(file_name):
