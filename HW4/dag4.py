@@ -6,10 +6,6 @@ from airflow.utils.dates import days_ago
 from sqlalchemy import create_engine
 
 
-default_args = {
-    'owner': 'airflow',
-}
-
 
 @dag(**default_settings())
 def titanic_taskflow_api_etl():
@@ -24,7 +20,7 @@ def titanic_taskflow_api_etl():
     def download_titanic_dataset(url='https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv'):
         df = pd.read_csv(url)
         titanic_df_json = df.to_json()
-        return {'titanic_df_json'}
+        return titanic_df_json
 
     @task()
     def pivot_dataset(titanic_df_json):
